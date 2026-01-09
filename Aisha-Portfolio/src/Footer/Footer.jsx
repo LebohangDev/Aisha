@@ -7,7 +7,7 @@ const Footer = () => {
         <div className={styles.footerContainer}>
             <div className={styles.footerWrapper}>
                 <div className={styles.footerContent}>
-                    <h2>ASIM SWATI</h2>
+                    <img src="Images/Logos/footer_logo.svg" alt="Brand Logo" className={styles.brandLogo} />
                     <div className={styles.media}>
                         <p>Media</p>
                         <div className={styles.socialIcons}>
@@ -28,7 +28,7 @@ const Footer = () => {
 
             </div>
             <hr />
-            <p>© 2025 ASIM SWATI. All rights reserved.| www.creatorsblueprint.net</p>
+            <p>© 2025 Aisha Ray. All rights reserved.| www.creatorsblueprint.net</p>
 
 
 

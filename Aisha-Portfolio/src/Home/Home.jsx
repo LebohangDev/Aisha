@@ -16,14 +16,12 @@ const Home = () => {
                         <img src="Images/Asim/Asim_Hero.png" alt="" />
                     </div>
                     <div className={styles.heroTextContainer}>
-                        <img src="Images/Logos/logo_4.svg" alt="Brand Logo" className={styles.brandLogo} />
-                        <h2>Food Blogger Turned Chef</h2>
                         <p>
                             Elevating the art of pastry with passion and precision. Join me on a journey from home kitchen experiments to professional culinary excellence, crafting desserts that tell a story.
                         </p>
                         <div className={styles.ctaRow}>
-                            <button className={styles.btnPrimary}>Get Started</button>
-                            <button className={styles.btnSecondary}>View Portfolio</button>
+                            <button className={styles.btnPrimary}>Learn more</button>
+                            <button className={styles.btnSecondary}>BUY PRODUCT</button>
                         </div>
                     </div>
                 </div>

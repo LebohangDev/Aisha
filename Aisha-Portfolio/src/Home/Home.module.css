@@ -6,12 +6,19 @@
     grid-template-rows: 40rem;
     justify-content: center;
     background-color: var(--bg-primary);
+    background-image: url("Images/Hero/hero_2.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     align-items: center;
     height: 100%;
+    max-width: 1400px;
+    height: 100%;
+    padding-bottom: 8rem;
 
     /* Increased for breathing room */
     margin: 0 auto;
-    padding: 0 2rem;
+
 }
 
 .homeContent1 {

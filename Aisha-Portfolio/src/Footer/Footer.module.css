@@ -24,12 +24,9 @@
     gap: 3rem;
 }
 
-.footerContent h2 {
-    font-family: 'Libre Bodoni', serif;
-    font-size: 2rem;
-    margin: 0;
-    font-weight: 400;
-    letter-spacing: 1px;
+.footerContent img {
+    width: 150px;
+    height: 150px;
 }
 
 .media {
