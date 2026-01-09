@@ -1,0 +1,370 @@
+/* Product Section Styles - Light Editorial Theme */
+
+.ProductContainer {
+    background-color: var(--bg-white);
+    color: var(--text-body);
+    width: 100%;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.ProductHeader {
+    text-align: center;
+    padding: 0 2rem 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ProductHeader h1 {
+    font-size: 2.5rem;
+    color: var(--text-header);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.ProductHeader p {
+    font-size: 1.1rem;
+    color: var(--text-body);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Ebook Section (Product Content) --- */
+.ProductContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    max-width: 1400px;
+    margin: 0 auto 8rem auto;
+    padding: 0 2rem;
+    align-items: center;
+}
+
+.ProductContentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+}
+
+/* Use specific targeting if classes are nested in JSX */
+.ProductContentHeader h1 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ProductContentBody h1 {
+    font-family: 'Libre Bodoni', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text-header);
+    margin: 0;
+}
+
+.ProductContentBody p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-body);
+    line-height: 1.8;
+    margin: 0;
+    max-width: 90%;
+}
+
+.ProductContentBodyButton {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.emailInput {
+    flex: 1;
+    min-width: 250px;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    color: var(--text-header);
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.2s;
+}
+
+.emailInput:focus {
+    border-color: var(--accent);
+    outline: none;
+    background-color: #fff;
+}
+
+.ProductContentBodyButton button {
+    background-color: var(--accent);
+    color: #1a1a1a;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+}
+
+.ProductContentBodyButton button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(238, 186, 43, 0.3);
+}
+
+.ProductContentBodyButton button:disabled {
+    background-color: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Pricing Style */
+.ProductContentPrice {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.ProductContentPrice .price {
+    display: flex;
+    flex-direction: column;
+}
+
+.ProductContentPrice .price p:first-child {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.ProductContentPrice .price p:last-child {
+    font-family: 'Libre Bodoni', serif;
+    font-size: 2.8rem;
+    /* Large price */
+    color: var(--bg-secondary);
+    /* Deep Burgundy as requested */
+    margin: 0;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.ProductContentPrice .why {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.ProductContentEbook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ProductContentEbook img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    /* Add subtle shadow if needed for 'book' feel */
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
+}
+
+
+/* --- Benefits Section (Product Learn) --- */
+.ProductLearnContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* Title Left, List Right */
+    gap: 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    align-items: start;
+}
+
+.ProductLearnHeader {
+    position: sticky;
+    top: 2rem;
+    /* Stick content as list scrolls */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+}
+
+.ProductLearnHeader .title h1 {
+    font-family: 'Libre Bodoni', serif;
+    font-size: 3rem;
+    color: var(--text-header);
+    margin: 0 0 1rem 0;
+}
+
+.ProductLearnHeader .title p {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-body);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.ProductLearnHeader button {
+    width: fit-content;
+    background: transparent;
+    border: 1px solid var(--text-header);
+    padding: 1rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.ProductLearnHeader button:hover {
+    background: var(--text-header);
+    color: white;
+}
+
+.ProductLearnHeader img {
+    display: none;
+    /* Hide illustrative image here if redundant, or style it */
+}
+
+.ProductLearnGrid {
+    display: flex;
+    flex-direction: column;
+}
+
+.ProductLearnGridItem {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    /* Icon width fixed, Text fluid */
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    align-items: start;
+}
+
+.ProductLearnGridItem:first-child {
+    border-top: 1px solid #e0e0e0;
+}
+
+.ProductLearnGridItem i {
+    font-size: 2rem;
+    color: var(--text-header);
+    /* Black/Dark icons */
+    /* Remove the circle styles from previous design */
+    background: none;
+    border: none;
+    box-shadow: none;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.ProductLearnGridItem p {
+    font-size: 1.2rem;
+    color: var(--text-body);
+    line-height: 1.6;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    .ProductContainer {
+        padding: 4rem 0;
+    }
+
+    .ProductContent {
+        gap: 3rem;
+    }
+
+    .ProductContentBody h1 {
+        font-size: 2.8rem;
+    }
+
+    .ProductLearnContainer {
+        grid-template-columns: 1fr;
+        /* Stack vertically on tablet/smaller */
+        gap: 3rem;
+    }
+
+    .ProductLearnHeader {
+        position: static;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ProductContent {
+        grid-template-columns: 1fr;
+        /* Stack */
+        margin-bottom: 4rem;
+        gap: 3rem;
+    }
+
+    .ProductContentContainer {
+        order: 1;
+        /* Text first on mobile? Or Image first? User says "Text + Price... Right Product Image". On mobile usually Text Top. */
+    }
+
+    .ProductContentEbook {
+        order: 2;
+    }
+
+    .ProductContentBody h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Email Input Stack */
+    .ProductContentBodyButton {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .emailInput,
+    .ProductContentBodyButton button {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .ProductLearnGridItem {
+        grid-template-columns: 1fr;
+        /* Icon top */
+        gap: 1rem;
+        text-align: center;
+        justify-items: center;
+    }
+
+    .ProductLearnHeader {
+        text-align: center;
+    }
+
+    .ProductLearnHeader button {
+        margin: 0 auto;
+    }
+}

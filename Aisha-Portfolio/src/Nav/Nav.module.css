@@ -1,0 +1,303 @@
+/* Nav.module.css - Editorial/Minimal */
+
+.navContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    z-index: 1000;
+    background-color: rgba(255, 250, 232, 0.95);
+    /* Soft Cream, High Opacity */
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    /* Very subtle separation */
+    transition: transform 0.3s ease;
+}
+
+
+.navContainer nav {
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.navContainer nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Logo - Left Aligned */
+.nav_logo {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.nav_logo img {
+    height: 2.5rem;
+    width: auto;
+
+    filter: brightness(0) saturate(100%) invert(8%) sepia(10%) saturate(984%) hue-rotate(314deg) brightness(96%) contrast(93%);
+    /* #1a1a1a approx */
+}
+
+/* Links - Right Aligned (pushed via auto margin or flex layout) */
+.nav_links {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-left: auto;
+    /* Push to right */
+    margin-right: 3rem;
+    /* Space before contact/socials */
+}
+
+.nav_links li {
+    padding: 0;
+}
+
+.nav_links li a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-header);
+    /* Dark Chocolate */
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav_links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+.nav_links li a:hover {
+    color: black;
+
+}
+
+.nav_links li a:hover::after {
+    width: 100%;
+}
+
+.nav_links li.active a {
+    color: var(--text-header);
+}
+
+.nav_links li.active a::after {
+    width: 100%;
+}
+
+/* Contact / Socials - Far Right */
+.nav_contact {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.socials a i {
+    font-size: 1.2rem;
+    color: var(--text-header);
+    transition: color 0.2s;
+}
+
+.socials a:hover i {
+    color: var(--accent);
+}
+
+.contact button {
+    background: transparent;
+    border: 1px solid var(--text-header);
+    color: var(--text-header);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 600;
+}
+
+.contact button:hover {
+    background: var(--text-header);
+    color: #fff;
+    border-color: var(--text-header);
+}
+
+.contact i {
+    display: none;
+    /* Hide illustrative arrow for minimal look */
+}
+
+
+/* Hamburger - Mobile */
+.hamburgerContainer {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .nav_links {
+        gap: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    .contact button {
+        display: none;
+        /* Hide 'Let's Talk' text button on tablet to save space */
+    }
+}
+
+@media (max-width: 767px) {
+    .navContainer {
+        display: none;
+        /* Completely hide desktop nav container */
+    }
+
+    .hamburgerContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        background-color: var(--bg-primary);
+        /* Cream match */
+    }
+
+    .hamHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hamHeader h2 {
+        font-family: 'Libre Bodoni', serif;
+        font-size: 2rem;
+        color: var(--text-header);
+        margin: 0;
+        font-weight: 700;
+    }
+
+    .hamburgerIcon {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        /* Invert to dark */
+        filter: brightness(0);
+    }
+
+    .hamMenuActive {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--bg-white);
+        z-index: 2000;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .hamMenuActive .close {
+        align-self: flex-end;
+    }
+
+    .hamMenuActive .closeIcon {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        filter: brightness(0);
+    }
+
+    .hamMenuActive ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .hamMenuActive ul li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hamMenuActive ul li a {
+        font-family: 'Libre Bodoni', serif;
+        font-size: 2.5rem;
+        /* Large mobile text */
+        color: var(--text-header);
+        text-decoration: none;
+    }
+
+    .hamMenuActive ul li i {
+        display: none;
+        /* Remove icons for cleaner editorial look */
+    }
+
+    .hamMenuActive .media {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hamMenuActive .media h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .hamMenuActive .media .socials {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .hamMenuActive .media .socials i {
+        font-size: 1.5rem;
+        color: var(--text-header);
+    }
+
+    .hamMenuActive .copyright p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        text-align: center;
+    }
+}

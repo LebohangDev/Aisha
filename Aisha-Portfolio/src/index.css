@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  font-size: 90%;
+  font-family: 'Montserrat', sans-serif;
+
+  font-optical-sizing: auto;
+  font-style: normal;
+  overflow-x: hidden;
+
+  /* Color Palette */
+  --bg-primary: #FFFAE8;
+  /* Cream - Home Section Background */
+  --bg-secondary: #500000;
+  /* Deep Burgundy - Footer, Recognition, Price Number */
+  --bg-white: #FFFFFF;
+  /* White - Default Section Background */
+
+  --text-header: #1A1A1A;
+  /* Near Black / Dark Chocolate */
+  --text-body: #333333;
+  /* Softer Charcoal */
+  --text-muted: #8c8c8c;
+  /* Lighter Taupe / Cocoa */
+  --text-light: #FFFFFF;
+  /* White text for dark backgrounds */
+
+  --accent: #EEBA2B;
+  /* Gold - CTA, Spans, Highlights */
+
+  background-color: var(--bg-white);
+  color: var(--text-body);
+}
+
+body {
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Libre Bodoni', serif;
+  color: var(--text-header);
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+.app {
+  background-color: var(--bg-white);
+  color: var(--text-body);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 13rem 1fr 1fr;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  width: 100vw;
+  height: 100vh;
+
+  margin: 0 auto;
+}
+
+.app .header {
+  grid-column: 1 / -1;
+}
+
+.app .main {
+  grid-column: 1 / -1;
+}
+
+.app .footer {
+  grid-column: 1 / -1;
+}
+
+
+
+
+
+@media (max-width: 767px) {
+
+  :root {
+    font-size: 80%;
+  }
+
+  .app {
+    grid-template-columns: minmax(100%, 1fr);
+    max-width: 100%;
+
+
+  }
+
+}

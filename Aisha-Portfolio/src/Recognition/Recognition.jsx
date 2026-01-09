@@ -1,0 +1,74 @@
+
+import React from 'react';
+import styles from './Recognition.module.css';
+
+const Recognition = () => {
+
+    const recognitionItems = [
+        {
+            title: "Gulf Magazine Feature",
+            text: (
+                <>
+                    Featured by <a href="#" target="_blank" rel="noreferrer"><span>Gulf Magazine</span></a>, Aisha’s story highlights her bold pivot from a medicine path (NEET) into pastry, and how she built her career through consistency, long kitchen hours, and relentless learning, now carving a name for herself in Saudi Arabia (Red Sea Island).
+                </>
+            ),
+            image: "Images/recognition/rec_1.jpg",
+        },
+        {
+            title: "Mena Stories Feature",
+            text: (
+                <>
+                    Featured in <a href="#" target="_blank" rel="noreferrer"><span>MENA Stories</span></a>, Aisha’s journey is recognized for the uncommon leap from medicine into pastry — showcasing her ambition, discipline, and commitment to becoming chef-level early in her career.
+                </>
+            ),
+            image: "Images/recognition/rec_2.png",
+        },
+        {
+            title: "Makkani Magazine Feature",
+            text: (
+                <>
+                    Aisha’s second magazine feature was highlighted in <a href="#" target="_blank" rel="noreferrer"><span>Makkani Magazine’s</span></a> very first issue (Pages 26–27), marking an early milestone in her culinary career. Being selected for a debut edition reflects recognition of her journey and craft at a formative stage, spotlighting her growth, discipline, and rising presence as a pastry chef.
+                </>
+            ),
+            image: "Images/recognition/rec_3.png",
+        },
+    ];
+    return (
+        <div id="Recognition" className={styles.sectionContainer}>
+            <div className={styles.contentGrid}>
+
+                {/* Left Column: Title + Main Image */}
+                <div className={styles.leftColumn}>
+                    <div className={styles.sectionHeader}>
+                        <h1>Culinary Recognition Celebration</h1>
+                        <p>Discover My journey to achieving Culinary excellence through my Recognitions in the UAE</p>
+                    </div>
+                    <div className={styles.mainImageContainer}>
+                        <img src="Images/Aisha/Aisha_1.svg" alt="Aisha Portrait" />
+                    </div>
+                </div>
+
+                {/* Right Column: Stacked Recognition Entries */}
+                <div className={styles.rightColumn}>
+                    {recognitionItems.map((item, index) => (
+                        <div key={index} className={styles.recognitionItem}>
+                            <div className={styles.itemHeader}>
+                                <span className={styles.itemNumber}>0{index + 1}</span>
+                                <h3>{item.title}</h3>
+                            </div>
+                            <div className={styles.itemBody}>
+                                <div className={styles.itemText}>{item.text}</div>
+                                <div className={styles.magazineImage}>
+                                    <img src={item.image} alt={item.title} />
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+            </div>
+        </div>
+    );
+};
+
+export default Recognition;

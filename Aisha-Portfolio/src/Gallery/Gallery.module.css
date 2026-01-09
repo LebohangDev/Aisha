@@ -1,0 +1,91 @@
+/* Gallery Section Styles */
+
+.galleryContainer {
+    background-color: var(--bg-white);
+    width: 100%;
+    padding: 6rem 1rem;
+    min-height: auto;
+}
+
+.GalleryHeader {
+    text-align: center;
+    padding: 0 1rem 4rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.GalleryHeader h1 {
+    font-family: 'Libre Bodoni', serif;
+    font-size: 2.5rem;
+    color: var(--text-header);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 1rem 0;
+    font-weight: 500;
+}
+
+.GalleryHeader hr {
+    display: none;
+    /* Cleaner look without line, or use gold line */
+}
+
+/* Helper for Masonry */
+.galleryContainer>div {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.imageWrapper {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.imageWrapper:hover img {
+    transform: scale(1.03);
+}
+
+.imageWrapper p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 2rem 1rem 1rem 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.imageWrapper:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .galleryContainer {
+        padding: 4rem 1rem;
+    }
+
+    .GalleryHeader h1 {
+        font-size: 2rem;
+    }
+
+    /* Show labels always on mobile or keep interaction? 
+       Usually touch has no hover. Let's keep it clean or show on tap. 
+       Or make opacity 1 if needed. For now default hover logic. */
+}

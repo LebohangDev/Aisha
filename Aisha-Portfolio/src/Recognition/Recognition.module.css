@@ -1,0 +1,177 @@
+/* Recognition Section Styles */
+
+.sectionContainer {
+    background-color: var(--bg-secondary);
+    /* Deep Burgundy */
+    color: var(--text-light);
+    width: 100%;
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* Left Column */
+.leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.sectionHeader h1 {
+    font-family: 'Libre Bodoni', serif;
+    font-size: 3.5rem;
+    color: var(--text-light);
+    /* White on dark */
+    margin: 0 0 1rem 0;
+    line-height: 1.1;
+}
+
+.sectionHeader p {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-secondary);
+    /* Silver/Grey */
+    font-size: 1.1rem;
+    max-width: 90%;
+}
+
+.mainImageContainer {
+    width: 100%;
+    border-radius: 4px;
+    /* Minimal radius */
+    overflow: hidden;
+}
+
+.mainImageContainer img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Right Column */
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    /* Spacing between items */
+    padding-top: 2rem;
+    /* Offset for alignment */
+}
+
+.recognitionItem {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 3rem;
+}
+
+.recognitionItem:last-child {
+    border-bottom: none;
+}
+
+.itemHeader {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+}
+
+.itemNumber {
+    font-family: 'Libre Bodoni', serif;
+    font-size: 2rem;
+    color: var(--accent);
+    /* Number in Gold */
+    font-weight: 700;
+}
+
+.itemHeader h3 {
+    font-family: 'Libre Bodoni', serif;
+    font-size: 2rem;
+    color: var(--text-light);
+    margin: 0;
+    font-weight: 500;
+}
+
+.itemBody {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Text left, Logo right */
+    gap: 2rem;
+    align-items: start;
+}
+
+.itemText {
+    font-family: 'Montserrat', sans-serif;
+    color: #e0e0e0;
+    /* Off-white for readability */
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.itemText span {
+    color: var(--accent);
+    /* Gold highlight for magazine names */
+    font-weight: 600;
+}
+
+.itemText a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    transition: opacity 0.2s;
+}
+
+.itemText a:hover {
+    opacity: 0.8;
+}
+
+.magazineImage {
+    width: 100%;
+    max-width: 120px;
+    /* Constrain logo size */
+}
+
+.magazineImage img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .contentGrid {
+        gap: 2rem;
+    }
+
+    .sectionHeader h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .rightColumn {
+        padding-top: 0;
+    }
+
+    .itemBody {
+        grid-template-columns: 1fr;
+        /* Stack text and logo on mobile */
+    }
+
+    .magazineImage {
+        max-width: 100px;
+    }
+}
