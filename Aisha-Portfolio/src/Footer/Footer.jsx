@@ -18,17 +18,17 @@ const Footer = () => {
                     </div>
                     <div className={styles.footerNav}>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Impact</a></li>
-                            <li><a href="#">Product</a></li>
-                            <li><a href="#">Gallery</a></li>
+                            <li><a href="#Home">Home</a></li>
+                            <li><a href="#Recognition">Recognition</a></li>
+                            <li><a href="#Product">Product</a></li>
+                            <li><a href="#Gallery">Gallery</a></li>
                         </ul>
                     </div>
                 </div>
 
             </div>
             <hr />
-            <p>© 2025 Aisha Ray. All rights reserved.| www.creatorsblueprint.net</p>
+            <p>© 2025 Aisha Ray. All rights reserved. | www.creatorsblueprint.net</p>
 
 
 

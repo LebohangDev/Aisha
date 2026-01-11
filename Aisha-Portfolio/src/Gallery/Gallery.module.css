@@ -1,40 +1,45 @@
-/* Gallery Section Styles */
+/* ------------------------------
+   GALLERY SECTION
+------------------------------ */
 
 .galleryContainer {
-    background-color: var(--bg-white);
+    background-color: #fffae8;
     width: 100%;
     padding: 6rem 1rem;
-    min-height: auto;
 }
 
+/* Header */
 .GalleryHeader {
     text-align: center;
-    padding: 0 1rem 4rem 1rem;
+    padding-bottom: 3rem;
     max-width: 900px;
     margin: 0 auto;
 }
 
+.divider {
+    width: 160px;
+    height: 2px;
+    background-color: #00000078;
+    margin: 0 auto 1.4rem auto;
+}
+
 .GalleryHeader h1 {
     font-family: 'Libre Bodoni', serif;
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     color: var(--text-header);
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin: 0 0 1rem 0;
+    margin: 0;
     font-weight: 500;
 }
 
-.GalleryHeader hr {
-    display: none;
-    /* Cleaner look without line, or use gold line */
-}
-
-/* Helper for Masonry */
+/* Masonry container */
 .galleryContainer>div {
     max-width: 1400px;
     margin: 0 auto;
 }
 
+/* Image wrapper */
 .imageWrapper {
     position: relative;
     overflow: hidden;
@@ -42,16 +47,17 @@
 }
 
 .imageWrapper img {
-    width: 100%;
+    width: 500px;
     height: auto;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease;
 }
 
 .imageWrapper:hover img {
     transform: scale(1.03);
 }
 
+/* Title overlay */
 .imageWrapper p {
     position: absolute;
     bottom: 0;
@@ -76,16 +82,20 @@
     transform: translateY(0);
 }
 
+/* ------------------------------
+   RESPONSIVE
+------------------------------ */
+
 @media (max-width: 768px) {
     .galleryContainer {
         padding: 4rem 1rem;
     }
 
     .GalleryHeader h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
-    /* Show labels always on mobile or keep interaction? 
-       Usually touch has no hover. Let's keep it clean or show on tap. 
-       Or make opacity 1 if needed. For now default hover logic. */
+    .imageWrapper p {
+        font-size: 0.85rem;
+    }
 }

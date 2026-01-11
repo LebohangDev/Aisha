@@ -1,5 +1,6 @@
 import React from 'react';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import { motion } from "framer-motion";
 import styles from './Gallery.module.css';
 
 const Gallery = () => {
@@ -24,27 +25,40 @@ const Gallery = () => {
 
     return (
         <div id="Gallery" className={styles.galleryContainer}>
-            <div className={styles.GalleryHeader}>
-                <hr />
-                <h1>My Curated Gallery </h1>
 
+            {/* Header */}
+            <motion.div
+                className={styles.GalleryHeader}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                viewport={{ once: true }}
+            >
+                <div className={styles.divider}></div>
+                <h1>My Curated Gallery</h1>
+            </motion.div>
 
-            </div>
+            {/* Masonry Grid */}
             <ResponsiveMasonry
                 columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1200: 3 }}
             >
                 <Masonry gutter="1.5rem">
                     {images.map((image, i) => (
-                        <div key={i} className={styles.imageWrapper}>
-                            <img
-                                src={image.src}
-                                alt={`pastry_${i + 1}`}
-                            />
+                        <motion.div
+                            key={i}
+                            className={styles.imageWrapper}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.05 }}
+                            viewport={{ once: true }}
+                        >
+                            <img src={image.src} alt={image.title} />
                             <p>{image.title}</p>
-                        </div>
+                        </motion.div>
                     ))}
                 </Masonry>
             </ResponsiveMasonry>
+
         </div>
     );
 };

@@ -2,17 +2,18 @@
 
 .sectionContainer {
     background-color: var(--bg-secondary);
-    /* Deep Burgundy */
     color: var(--text-light);
     width: 100%;
-    padding: 6rem 2rem;
+    padding: 7rem 2rem;
+    /* Slightly more breathing room */
     position: relative;
 }
 
 .contentGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 5rem;
+    /* More elegant spacing */
     max-width: 1400px;
     margin: 0 auto;
     align-items: start;
@@ -22,30 +23,30 @@
 .leftColumn {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 3.5rem;
+    /* Slightly more spacing */
 }
 
 .sectionHeader h1 {
     font-family: 'Libre Bodoni', serif;
-    font-size: 3.5rem;
-    color: var(--text-light);
-    /* White on dark */
-    margin: 0 0 1rem 0;
+    font-size: 3.4rem;
+    margin: 0 0 1.2rem 0;
     line-height: 1.1;
+    color: var(--text-light);
+
 }
 
 .sectionHeader p {
     font-family: 'Montserrat', sans-serif;
     color: var(--text-secondary);
-    /* Silver/Grey */
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     max-width: 90%;
+    line-height: 1.7;
 }
 
 .mainImageContainer {
-    width: 100%;
-    border-radius: 4px;
-    /* Minimal radius */
+    width: 85%;
+    border-radius: 6px;
     overflow: hidden;
 }
 
@@ -53,24 +54,22 @@
     width: 100%;
     height: auto;
     object-fit: cover;
-    display: block;
 }
 
 /* Right Column */
 .rightColumn {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
-    /* Spacing between items */
-    padding-top: 2rem;
-    /* Offset for alignment */
+    gap: 4.5rem;
+    /* More spacing between items */
+    padding-top: 1rem;
 }
 
 .recognitionItem {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 1.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     padding-bottom: 3rem;
 }
 
@@ -81,44 +80,42 @@
 .itemHeader {
     display: flex;
     align-items: baseline;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 .itemNumber {
     font-family: 'Libre Bodoni', serif;
     font-size: 2rem;
     color: var(--accent);
-    /* Number in Gold */
     font-weight: 700;
 }
 
 .itemHeader h3 {
     font-family: 'Libre Bodoni', serif;
-    font-size: 2rem;
-    color: var(--text-light);
+    font-size: 1.9rem;
     margin: 0;
     font-weight: 500;
+    color: var(--text-light);
+
 }
 
 .itemBody {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    /* Text left, Logo right */
     gap: 2rem;
     align-items: start;
 }
 
+/* Text */
 .itemText {
     font-family: 'Montserrat', sans-serif;
     color: #e0e0e0;
-    /* Off-white for readability */
     line-height: 1.8;
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
 .itemText span {
     color: var(--accent);
-    /* Gold highlight for magazine names */
     font-weight: 600;
 }
 
@@ -133,22 +130,31 @@
     opacity: 0.8;
 }
 
+/* --- Square Magazine Image --- */
 .magazineImage {
-    width: 100%;
-    max-width: 120px;
-    /* Constrain logo size */
+    width: 120px;
+    height: 120px;
+    /* Force square */
+    border-radius: 12px;
+    /* Rounded square aesthetic */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .magazineImage img {
     width: 100%;
-    height: auto;
-    border-radius: 2px;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures perfect square crop */
+    border-radius: 12px;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
     .contentGrid {
-        gap: 2rem;
+        gap: 3rem;
     }
 
     .sectionHeader h1 {
@@ -162,16 +168,24 @@
         gap: 4rem;
     }
 
+    .mainImageContainer {
+        align-self: center;
+        width: 100%;
+    }
+
     .rightColumn {
         padding-top: 0;
+        gap: 3rem;
     }
 
     .itemBody {
         grid-template-columns: 1fr;
-        /* Stack text and logo on mobile */
+        gap: 1.5rem;
     }
 
     .magazineImage {
-        max-width: 100px;
+        width: 100px;
+        height: 100px;
+        margin-top: 0.5rem;
     }
 }

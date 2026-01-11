@@ -83,19 +83,20 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
                             </div>
                             <div className={styles.nav_contact}>
                                 <div className={styles.socials}>
-                                    <a href="https://www.facebook.com/Asim" target="_blank">
+                                    <a href="https://www.facebook.com/Asim">
                                         <i class="ri-facebook-fill"></i>
                                     </a>
-                                    <a href="https://www.youtube.com/Asim" target="_blank">
+                                    <a href="https://www.youtube.com/Asim">
                                         <i class="ri-youtube-fill"></i>
                                     </a>
-                                    <a href="https://www.instagram.com/Asim" target="_blank">
+                                    <a href="https://www.instagram.com/Asim">
                                         <i class="ri-instagram-fill"></i>
                                     </a>
                                 </div>
                                 <div className={styles.contact}>
-                                    <button>Let's Talk</button>
+                                    <button>Let's Talk
                                     <i class="ri-arrow-right-up-line"></i>
+                                    </button>
                                 </div>
                             </div>
                         </ul>
@@ -107,7 +108,7 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
 
             <div className={styles.hamburgerContainer}>
                 <div className={styles.hamHeader}>
-                    <h2>Asim</h2>
+                    <h2>Aisha</h2>
                     <img
                         src="Images/hamburger.svg"
                         alt="Menu"

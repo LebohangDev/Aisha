@@ -1,5 +1,4 @@
-
-import React from 'react';
+import { motion } from "framer-motion";
 import styles from './Recognition.module.css';
 
 const Recognition = () => {
@@ -33,36 +32,58 @@ const Recognition = () => {
             image: "Images/recognition/rec_3.png",
         },
     ];
+
     return (
         <div id="Recognition" className={styles.sectionContainer}>
             <div className={styles.contentGrid}>
 
-                {/* Left Column: Title + Main Image */}
-                <div className={styles.leftColumn}>
+                {/* LEFT COLUMN */}
+                <motion.div
+                    className={styles.leftColumn}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                >
                     <div className={styles.sectionHeader}>
                         <h1>Culinary Recognition Celebration</h1>
-                        <p>Discover My journey to achieving Culinary excellence through my Recognitions in the UAE</p>
+                        <p>Discover my journey to achieving culinary excellence through my recognitions in the UAE</p>
                     </div>
-                    <div className={styles.mainImageContainer}>
-                        <img src="Images/Aisha/Aisha_1.svg" alt="Aisha Portrait" />
-                    </div>
-                </div>
 
-                {/* Right Column: Stacked Recognition Entries */}
+                    <motion.div
+                        className={styles.mainImageContainer}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                        viewport={{ once: true }}
+                    >
+                        <img src="Images/Aisha/Aisha_1.svg" alt="Aisha Portrait" />
+                    </motion.div>
+                </motion.div>
+
+                {/* RIGHT COLUMN */}
                 <div className={styles.rightColumn}>
                     {recognitionItems.map((item, index) => (
-                        <div key={index} className={styles.recognitionItem}>
+                        <motion.div
+                            key={index}
+                            className={styles.recognitionItem}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.15 }}
+                            viewport={{ once: true }}
+                        >
                             <div className={styles.itemHeader}>
                                 <span className={styles.itemNumber}>0{index + 1}</span>
                                 <h3>{item.title}</h3>
                             </div>
+
                             <div className={styles.itemBody}>
                                 <div className={styles.itemText}>{item.text}</div>
                                 <div className={styles.magazineImage}>
                                     <img src={item.image} alt={item.title} />
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 

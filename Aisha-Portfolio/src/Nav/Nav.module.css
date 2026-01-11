@@ -120,6 +120,12 @@
     gap: 1rem;
 }
 
+.socials a {
+    text-decoration: none;
+    /* Remove underline */
+}
+
+
 .socials a i {
     font-size: 1.2rem;
     color: var(--text-header);
@@ -131,9 +137,12 @@
 }
 
 .contact button {
-    background: transparent;
-    border: 1px solid var(--text-header);
-    color: var(--text-header);
+    background: #EEBA2B;
+    /* Updated */
+    border: 1px solid #EEBA2B;
+    /* Updated */
+    color: #1a1a1a;
+    /* Dark text for contrast */
     padding: 0.6rem 1.5rem;
     font-size: 0.85rem;
     font-family: 'Montserrat', sans-serif;
@@ -144,15 +153,25 @@
     font-weight: 600;
 }
 
+
 .contact button:hover {
-    background: var(--text-header);
-    color: #fff;
-    border-color: var(--text-header);
+    background: #d4a325;
+    /* Slightly darker gold */
+    border-color: #d4a325;
+    color: #1a1a1a;
 }
 
 .contact i {
-    display: none;
+    display: inline-block;
+    /* Make arrow visible */
+    font-size: 1.1rem;
+    margin-left: 0.3rem;
+    color: #1a1a1a;
     /* Hide illustrative arrow for minimal look */
+}
+
+.contact:hover i {
+    color: #1a1a1a;
 }
 
 

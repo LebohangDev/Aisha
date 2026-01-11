@@ -1,58 +1,65 @@
-/* Footer Section Styles */
+/* ------------------------------
+   FOOTER — POLISHED
+------------------------------ */
 
 .footerContainer {
     background-color: var(--bg-secondary);
-    /* #500000 */
     color: #FFFFFF;
-    padding: 5rem 2rem 2rem 2rem;
+    padding: 3rem 2rem 1.5rem 2rem;
+    /* Reduced vertical spacing */
     width: 100%;
 }
 
 .footerWrapper {
     max-width: 1400px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
 }
 
 .footerContent {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 3rem;
+    align-items: center;
+    /* Align all items on same line */
+    gap: 2rem;
+    flex-wrap: nowrap;
 }
 
-.footerContent img {
-    width: 150px;
-    height: 150px;
+/* Logo */
+.brandLogo {
+    width: 120px;
+    height: auto;
 }
 
+/* Media Block */
 .media {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    /* Center text + icons */
+    gap: 0.8rem;
+    margin-left: 16rem;
 }
 
 .media p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.85);
+    /* More contrast */
     margin: 0;
 }
 
+/* Social Icons */
 .socialIcons {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 .socialIcons i {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    /* Consistent size */
     color: var(--accent);
-    /* Gold #EEBA2B */
     cursor: pointer;
     transition: opacity 0.2s;
 }
@@ -61,57 +68,90 @@
     opacity: 0.8;
 }
 
+/* Navigation */
 .footerNav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 2rem;
+    gap: 1.8rem;
 }
 
 .footerNav li a {
     text-decoration: none;
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
-    transition: color 0.2s;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: color 0.2s;
 }
 
 .footerNav li a:hover {
     color: var(--accent);
 }
 
+/* Divider */
 .footerContainer hr {
     border: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    /* Higher contrast */
     width: 100%;
-    margin: 4rem 0 2rem 0;
+    margin: 2rem 0 1rem 0;
+    /* Reduced spacing */
 }
 
+/* Copyright */
 .footerContainer>p {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
+    /* More contrast */
     margin: 0;
 }
 
+/* ------------------------------
+   RESPONSIVE
+------------------------------ */
+
+@media (max-width: 900px) {
+    .footerContent {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
+    }
+}
+
 @media (max-width: 768px) {
+
+    /* Hide navigation on mobile */
+    .footerNav {
+        display: none;
+    }
+
     .footerContent {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: 2rem;
     }
 
-    .footerNav ul {
-        flex-direction: column;
-        gap: 1.5rem;
+    .brandLogo {
+        width: 110px;
+        margin-left: 2rem;
+    }
+
+    .media {
+        margin-left: 0;
+    }
+
+    .socialIcons i {
+        font-size: 1.3rem;
     }
 
     .footerContainer {
-        padding: 4rem 2rem 2rem 2rem;
+        padding: 3rem 1.5rem 1.5rem 1.5rem;
     }
 }
