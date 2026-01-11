@@ -43,7 +43,7 @@
 .btnPrimary {
     background-color: var(--accent);
     color: #1a1a1a;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 600;
     padding: 0.8rem 2rem;
     border: none;

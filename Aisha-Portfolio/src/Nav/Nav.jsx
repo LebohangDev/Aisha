@@ -95,8 +95,9 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
                                 </div>
                                 <div className={styles.contact}>
                                     <button>Let's Talk
-                                    <i class="ri-arrow-right-up-line"></i>
+
                                     </button>
+                                    <i class="ri-arrow-right-up-line"></i>
                                 </div>
                             </div>
                         </ul>
