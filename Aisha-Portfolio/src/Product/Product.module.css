@@ -95,8 +95,9 @@
 .ProductContentBodyButton {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     gap: 1rem;
-    width: 100%;
+    width: 80%;
     margin-top: 1rem;
 }
 
@@ -131,6 +132,7 @@
     font-family: 'Lato', sans-serif;
     transition: transform 0.2s, box-shadow 0.2s;
     white-space: nowrap;
+    border-radius: 12px;
 }
 
 .ProductContentBodyButton button:hover {
@@ -184,10 +186,22 @@
     cursor: pointer;
     text-decoration: none;
     transition: opacity 0.2s;
+    margin-top: 2rem;
 }
 
 .ProductContentPrice .why:hover {
     opacity: 0.7;
+}
+
+.ProductContentPrice .why p {
+    margin: 0;
+    line-height: 1;
+}
+
+.ProductContentPrice .why i {
+    line-height: 1;
+    width: 16px;
+    height: 16px;
 }
 
 /* ------------------------------
@@ -214,7 +228,7 @@
 
 .ProductLearnContainer {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 5rem;
     max-width: 1400px;
     margin: 0 auto;
@@ -251,8 +265,8 @@
 
 .ProductLearnHeader button {
     width: fit-content;
-    background: transparent;
-    border: 1px solid var(--text-header);
+    background: var(--accent);
+    border: none;
     padding: 1rem 2rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -261,16 +275,19 @@
     gap: 0.5rem;
     align-items: center;
     transition: all 0.2s;
+    border-radius: 12px;
 }
 
 
 .ProductLearnHeader button:hover {
-    background: var(--text-header);
-    color: white;
+    /* background: var(--text-header);
+    color: white; */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .ProductLearnHeader img {
-    width: 100%;
+    width: 70%;
     height: auto;
 }
 
@@ -287,6 +304,14 @@
     padding: 2.5rem 0;
     border-bottom: 1px solid #e0e0e0;
     align-items: start;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+}
+
+.ProductLearnGridItem:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
 }
 
 .ProductLearnGridItem:first-child {
@@ -294,8 +319,8 @@
 }
 
 .ProductLearnGridItem i {
-    font-size: 2rem;
-    color: #EEBA2B;
+    font-size: 3rem;
+    color: var(--text-header);
     /* Updated icon color */
 }
 
@@ -343,6 +368,11 @@
         gap: 3rem;
     }
 
+    .ProductContentContainer {
+        align-items: center;
+        text-align: center;
+    }
+
     .ProductContentEbook img {
         max-width: 300px;
         margin: 0 auto;
@@ -351,12 +381,23 @@
     .ProductContentBodyButton {
         flex-direction: column;
         align-items: stretch;
+        width: 100%;
     }
 
     .emailInput,
     .ProductContentBodyButton button {
         width: 100%;
         min-width: 0;
+    }
+
+    .ProductContentPrice {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .ProductContentPrice .price p:last-child {
+        margin-top: 1rem;
     }
 
     .ProductLearnGridItem {
@@ -372,5 +413,9 @@
 
     .ProductLearnHeader button {
         margin: 0 auto;
+    }
+
+    .ProductLearnHeader img {
+        width: 100%;
     }
 }

@@ -34,7 +34,6 @@ const Gallery = () => {
                 transition={{ duration: 0.7, ease: "easeOut" }}
                 viewport={{ once: true }}
             >
-                <div className={styles.divider}></div>
                 <h1>My Curated Gallery</h1>
             </motion.div>
 

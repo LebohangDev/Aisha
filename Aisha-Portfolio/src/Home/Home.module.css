@@ -17,6 +17,8 @@
 .homeContent1 img {
     max-width: 100%;
     height: auto;
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
     /* margin-top: 14rem; */
 }
 
@@ -26,7 +28,26 @@
     flex-direction: column;
     gap: 2rem;
     max-width: 550px;
+    margin-bottom: 15rem;
 }
+
+.wordRow {
+    display: flex;
+    gap: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #A29F9F;
+    opacity: 0.4;
+    font-weight: 600;
+    margin-bottom: 10rem;
+}
+
+.wordRow span {
+    white-space: nowrap;
+}
+
 
 .heroTextContainer p {
     font-size: 1.1rem;
@@ -100,6 +121,15 @@
         align-items: center;
         max-width: 100%;
         padding: 0 1rem;
+    }
+
+    .wordRow {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+        font-size: 0.7rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
     }
 
     .heroTextContainer p {

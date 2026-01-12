@@ -109,7 +109,9 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
 
             <div className={styles.hamburgerContainer}>
                 <div className={styles.hamHeader}>
-                    <h2>Aisha</h2>
+                    <div className={styles.nav_logo}>
+                                <img src="Images/Logos/nav_logo.svg" alt="Logo" />
+                    </div>
                     <img
                         src="Images/hamburger.svg"
                         alt="Menu"

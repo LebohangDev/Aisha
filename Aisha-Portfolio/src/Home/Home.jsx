@@ -25,6 +25,19 @@ const Home = () => {
                 viewport={{ once: true }}
             >
                 <div className={styles.heroTextContainer}>
+                    <motion.div
+                        className={styles.wordRow}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                        viewport={{ once: true }}
+                    >
+                        <span>PRECISION</span>
+                        <span>CREATIVITY</span>
+                        <span>DISCIPLINE</span>
+                        <span>PATIENCE</span>
+                    </motion.div>
+
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}

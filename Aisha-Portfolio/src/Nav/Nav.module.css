@@ -50,7 +50,7 @@
 }
 
 .nav_logo img {
-    height: 2.5rem;
+    height: 4.2rem;
     width: auto;
 
     filter: brightness(0) saturate(100%) invert(8%) sepia(10%) saturate(984%) hue-rotate(314deg) brightness(96%) contrast(93%);
@@ -170,6 +170,7 @@
     /* Slightly darker gold */
     border-color: #d4a325;
     color: #1a1a1a;
+    transform: translateY(-2px);
 }
 
 .contact i {
@@ -192,6 +193,7 @@
 
 .contact:hover i {
     color: #1a1a1a;
+    transform: translateY(-4px);
 }
 
 
@@ -215,6 +217,10 @@
         /* Completely hide desktop nav container */
     }
 
+    .nav_logo img {
+        height: 3.5rem;
+    }
+
     .hamburgerContainer {
         display: flex;
         flex-direction: column;
@@ -224,6 +230,7 @@
         top: 0;
         z-index: 1000;
         background-color: var(--bg-primary);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         /* Cream match */
     }
 
@@ -256,7 +263,7 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: var(--bg-white);
+        background-color: var(--bg-primary);
         z-index: 2000;
         display: flex;
         flex-direction: column;
@@ -327,7 +334,7 @@
 
     .hamMenuActive .media .socials i {
         font-size: 1.5rem;
-        color: var(--text-header);
+        color: #800000;
     }
 
     .hamMenuActive .copyright p {
