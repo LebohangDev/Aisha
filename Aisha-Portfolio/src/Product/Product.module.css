@@ -6,7 +6,7 @@
     background-color: var(--bg-white);
     color: var(--text-body);
     width: 100%;
-    padding: 6rem 0;
+    padding: 3rem 0;
     overflow: hidden;
 }
 
@@ -22,14 +22,16 @@
 }
 
 .ProductHeader h1 {
-    font-size: 2.6rem;
+    font-size: 4rem;
     color: var(--text-header);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .ProductHeader p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    width: 40%;
+    margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
     color: var(--text-body);
 }
@@ -58,7 +60,7 @@
 .ProductContentHeader h1 {
     font-size: 0.9rem;
     color: #fff;
-    background: #500000;
+    background: #800000;
     width: fit-content;
     padding: 0.5rem 1rem;
     margin: 0;
@@ -121,7 +123,7 @@
 
 .ProductContentBodyButton button {
     background-color: var(--accent);
-    color: #1a1a1a;
+    color: #ffffff;
     border: none;
     padding: 1rem 2rem;
     font-size: 0.9rem;
@@ -171,7 +173,7 @@
 .ProductContentPrice .price p:last-child {
     font-family: 'Libre Bodoni', serif;
     font-size: 2.8rem;
-    color: var(--bg-secondary);
+    color: #800000;
     margin: 0;
     font-weight: 700;
     line-height: 1;
@@ -200,8 +202,7 @@
 
 .ProductContentPrice .why i {
     line-height: 1;
-    width: 16px;
-    height: 16px;
+    font-size: 1.2rem;
 }
 
 /* ------------------------------
@@ -271,6 +272,7 @@
     font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
+    color: white;
     display: flex;
     gap: 0.5rem;
     align-items: center;

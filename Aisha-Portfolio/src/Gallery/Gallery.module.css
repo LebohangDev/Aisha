@@ -3,7 +3,7 @@
 ------------------------------ */
 
 .galleryContainer {
-    background-color: #fffae8;
+    background-color: var(--bg-white);
     width: 100%;
     padding: 6rem 1rem;
 }

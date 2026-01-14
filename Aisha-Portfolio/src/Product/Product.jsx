@@ -25,7 +25,7 @@ const Product = () => {
 
     const productInfo = {
         title: "From Home-Level to Chef-Level Pastry",
-        amount: 39,
+        amount: 29,
         currency: "USD",
         successUrl: "https://lebohangdev.github.io/Asim_Portfolio/?payment=success",
         cancelUrl: "https://lebohangdev.github.io/Asim_Portfolio/?payment=cancel",
@@ -76,7 +76,7 @@ const Product = () => {
                 viewport={{ once: true }}
             >
                 <h1>Pastry Pro Path</h1>
-                <p>For bakers who want more than recipes — this is the craft.</p>
+                <p>For bakers who want more than recipes, this is the craft</p>
             </motion.div>
 
             {/* MAIN PRODUCT CONTENT */}

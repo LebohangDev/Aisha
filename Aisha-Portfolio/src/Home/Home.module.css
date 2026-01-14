@@ -1,16 +1,23 @@
 /* --- HOME SECTION --- */
 
 .homeContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+    width: 100vw;
+    height: 100%;
     background-color: var(--bg-primary);
     background-image: url("Images/Hero/hero_2.svg");
     background-size: cover;
     background-position: center;
-    padding: 2rem 2rem 0rem 2rem;
+}
+
+.wrapper {
     max-width: 1400px;
     margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 2rem 2rem 0rem 2rem;
 }
 
 /* Left side image */
@@ -28,7 +35,7 @@
     flex-direction: column;
     gap: 2rem;
     max-width: 550px;
-    margin-bottom: 15rem;
+    margin-bottom: 25rem;
 }
 
 .wordRow {
@@ -41,7 +48,7 @@
     color: #A29F9F;
     opacity: 0.4;
     font-weight: 600;
-    margin-bottom: 10rem;
+    margin-bottom: 1rem;
 }
 
 .wordRow span {
@@ -104,6 +111,11 @@
 @media (max-width: 767px) {
 
     .homeContainer {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .wrapper {
         grid-template-columns: 1fr;
         padding: 0rem 1.5rem 6rem 1.5rem;
         text-align: center;
