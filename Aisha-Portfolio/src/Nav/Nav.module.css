@@ -211,7 +211,7 @@
 
 }
 
-@media (max-width: 767px) {
+@media (max-width: 850px) {
     .navContainer {
         display: none;
         /* Completely hide desktop nav container */

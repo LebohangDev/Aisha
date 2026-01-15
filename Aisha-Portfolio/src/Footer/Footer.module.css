@@ -116,6 +116,12 @@
    RESPONSIVE
 ------------------------------ */
 
+@media (max-width: 1200px) {
+    .media {
+        margin-left: 0;
+    }
+}
+
 @media (max-width: 900px) {
     .footerContent {
         flex-wrap: wrap;
@@ -124,7 +130,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
 
     /* Hide navigation on mobile */
     .footerNav {

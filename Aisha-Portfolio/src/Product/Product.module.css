@@ -363,7 +363,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .ProductContent {
         grid-template-columns: 1fr;
         margin-bottom: 4rem;
