@@ -8,7 +8,7 @@ const Recognition = () => {
             title: "Gulf Magazine Feature",
             text: (
                 <>
-                    Featured by <a href="#" target="_blank" rel="noreferrer"><span>Gulf Magazine</span><i class="ri-arrow-right-up-line"></i></a>, Aisha’s story highlights her bold pivot from a medicine path (NEET) into pastry, and how she built her career through consistency, long kitchen hours, and relentless learning, now carving a name for herself in Saudi Arabia (Red Sea Island).
+                    Featured by <a href="https://gulfmagazine.co/category/entrepreneurs/" target="_blank" rel="noreferrer"><span>Gulf Magazine</span><i className="ri-arrow-right-up-line"></i></a>, Aisha’s story highlights her bold pivot from a medicine path (NEET) into pastry, and how she built her career through consistency, long kitchen hours, and relentless learning, now carving a name for herself in Saudi Arabia (Red Sea Island).
                 </>
             ),
             image: "Images/recognition/rec_1.jpg",
@@ -17,7 +17,7 @@ const Recognition = () => {
             title: "Mena Stories Feature",
             text: (
                 <>
-                    Featured in <a href="#" target="_blank" rel="noreferrer"><span>MENA Stories</span><i class="ri-arrow-right-up-line"></i></a>, Aisha’s journey is recognized for the uncommon leap from medicine into pastry — showcasing her ambition, discipline, and commitment to becoming chef-level early in her career.
+                    Featured in <a href="https://menastories.me/article/aisha-ray-fasal-from-medicine-to-master-pastry-chef" target="_blank" rel="noreferrer"><span>MENA Stories</span><i className="ri-arrow-right-up-line"></i></a>, Aisha’s journey is recognized for the uncommon leap from medicine into pastry — showcasing her ambition, discipline, and commitment to becoming chef-level early in her career.
                 </>
             ),
             image: "Images/recognition/rec_2.png",
@@ -26,7 +26,7 @@ const Recognition = () => {
             title: "Makkani Magazine Feature",
             text: (
                 <>
-                    Aisha’s second magazine feature was highlighted in <a href="#" target="_blank" rel="noreferrer"><span>Makkani Magazine’s</span><i class="ri-arrow-right-up-line"></i></a> very first issue (Pages 26–27), marking an early milestone in her culinary career. Being selected for a debut edition reflects recognition of her journey and craft at a formative stage, spotlighting her growth, discipline, and rising presence as a pastry chef.
+                    Aisha’s second magazine feature was highlighted in <a href="https://www.instagram.com/p/DRVDsmqApBX/?igsh=ZzFtNXRsY2hpdGxt" target="_blank" rel="noreferrer"><span>Makkani Magazine’s</span><i className="ri-arrow-right-up-line"></i></a> very first issue (Pages 26–27), marking an early milestone in her culinary career. Being selected for a debut edition reflects recognition of her journey and craft at a formative stage, spotlighting her growth, discipline, and rising presence as a pastry chef.
                 </>
             ),
             image: "Images/recognition/rec_3.png",

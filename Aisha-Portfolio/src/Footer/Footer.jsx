@@ -11,9 +11,15 @@ const Footer = () => {
                     <div className={styles.media}>
                         <p>Media</p>
                         <div className={styles.socialIcons}>
-                            <i className="ri-instagram-line"></i>
-                            <i className="ri-youtube-line"></i>
-                            <i className="ri-facebook-line"></i>
+                            <a href="https://www.instagram.com/aisharay_vlogs/" target="_blank" rel="noreferrer">
+                                <i className="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@Aisharay_vlogs" target="_blank" rel="noreferrer">
+                                <i className="ri-youtube-line"></i>
+                            </a>
+                            <a href="https://www.facebook.com/hijabigram" target="_blank" rel="noreferrer">
+                                <i className="ri-facebook-line"></i>
+                            </a>
                         </div>
                     </div>
                     <div className={styles.footerNav}>

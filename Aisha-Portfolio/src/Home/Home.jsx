@@ -2,6 +2,13 @@ import { motion } from "framer-motion";
 import styles from './Home.module.css';
 
 const Home = () => {
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <div id='Home' className={styles.homeContainer}>
             <div className={styles.wrapper}>
@@ -52,8 +59,8 @@ const Home = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.6 }}
                         >
-                            <button className={styles.btnPrimary}>Learn more</button>
-                            <button className={styles.btnSecondary}>BUY PRODUCT</button>
+                            <button className={styles.btnPrimary} onClick={() => scrollToSection('Recognition')}>Learn more</button>
+                            <button className={styles.btnSecondary} onClick={() => scrollToSection('Product')}>BUY PRODUCT</button>
                         </motion.div>
                     </div>
                 </motion.div>

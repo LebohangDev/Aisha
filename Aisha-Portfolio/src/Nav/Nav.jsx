@@ -83,22 +83,21 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
                             </div>
                             <div className={styles.nav_contact}>
                                 <div className={styles.socials}>
-                                    <a href="https://www.facebook.com/Asim">
-                                        <i class="ri-facebook-fill"></i>
+                                    <a href="https://www.facebook.com/hijabigram" target="_blank" rel="noreferrer">
+                                        <i className="ri-facebook-fill"></i>
                                     </a>
-                                    <a href="https://www.youtube.com/Asim">
-                                        <i class="ri-youtube-fill"></i>
+                                    <a href="https://www.youtube.com/@Aisharay_vlogs" target="_blank" rel="noreferrer">
+                                        <i className="ri-youtube-fill"></i>
                                     </a>
-                                    <a href="https://www.instagram.com/Asim">
-                                        <i class="ri-instagram-fill"></i>
+                                    <a href="https://www.instagram.com/aisharay_vlogs/" target="_blank" rel="noreferrer">
+                                        <i className="ri-instagram-fill"></i>
                                     </a>
                                 </div>
-                                <div className={styles.contact}>
-                                    <button>Let's Talk
-
-                                    </button>
-                                    <i class="ri-arrow-right-up-line"></i>
-                                </div>
+                                <a href="https://www.instagram.com/aisharay_vlogs/" target="_blank" rel="noreferrer" className={styles.contact}>
+                                    <span>Let's Talk
+                                    </span>
+                                    <i className="ri-arrow-right-up-line"></i>
+                                </a>
                             </div>
                         </ul>
                     </nav>
@@ -110,7 +109,7 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
             <div className={styles.hamburgerContainer}>
                 <div className={styles.hamHeader}>
                     <div className={styles.nav_logo}>
-                                <img src="Images/Logos/nav_logo.svg" alt="Logo" />
+                        <img src="Images/Logos/nav_logo.svg" alt="Logo" />
                     </div>
                     <img
                         src="Images/hamburger.svg"
@@ -159,9 +158,15 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
                                 </h1>
 
                                 <div className={styles.socials}>
-                                    <i class="ri-instagram-line"></i>
-                                    <i class="ri-facebook-line"></i>
-                                    <i class="ri-youtube-line"></i>
+                                    <a href="https://www.instagram.com/aisharay_vlogs/" target="_blank" rel="noreferrer">
+                                        <i className="ri-instagram-line"></i>
+                                    </a>
+                                    <a href="https://www.facebook.com/hijabigram" target="_blank" rel="noreferrer">
+                                        <i className="ri-facebook-line"></i>
+                                    </a>
+                                    <a href="https://www.youtube.com/@Aisharay_vlogs" target="_blank" rel="noreferrer">
+                                        <i className="ri-youtube-line"></i>
+                                    </a>
                                 </div>
                             </div>
 
