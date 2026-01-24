@@ -1,9 +1,16 @@
-import React from 'react';
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+
+
+import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import styles from './Gallery.module.css';
 
 const Gallery = () => {
+
+    // Define animation variant locally
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    };
 
     const images = [
         { src: "Images/Pastries/pastry_1.png", title: "Rose Cake" },
@@ -23,43 +30,103 @@ const Gallery = () => {
         { src: "Images/Pastries/pastry_15.png", title: "Strawberry Tart" },
     ];
 
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [imageWidth, setImageWidth] = useState(300);
+
+
+    useEffect(() => {
+        const updateWidth = () => {
+            if (window.innerWidth <= 480) {
+
+                setImageWidth(170);
+            } else if (window.innerWidth <= 768) {
+
+                setImageWidth(270);
+            } else if (window.innerWidth <= 1024) {
+
+                setImageWidth(270);
+            } else {
+                setImageWidth(300);
+            }
+        };
+
+        // Initial call
+        updateWidth();
+
+        window.addEventListener('resize', updateWidth);
+        return () => window.removeEventListener('resize', updateWidth);
+    }, []);
+
+    useEffect(() => {
+
+        const timer = setInterval(() => {
+            setCurrentIndex(c => (c + 1) % images.length);
+            if (currentIndex == images.length - 1) {
+                setCurrentIndex(0);
+            }
+        }, 5000);
+
+        return () => clearInterval(timer);
+    }, []);
+
     return (
         <div id="Gallery" className={styles.galleryContainer}>
-
-            {/* Header */}
             <motion.div
                 className={styles.GalleryHeader}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true }}
+                variants={fadeInUp}
             >
-                <h1>My Curated Gallery</h1>
+                <h1>A GALLERY OF MY ACTIVITIES</h1>
+                <hr />
+            </motion.div>
+            <motion.div
+                className={styles.ActivitiesContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
+
+                <motion.div
+                    className={styles.ImagesContainer}
+
+                    animate={{ x: `-${currentIndex * imageWidth}px` }}
+                    transition={{ ease: "easeInOut", duration: 0.5 }}
+                >
+                    {images.map((image, index) => (
+                        <div className={styles.imageCardContainer} key={index}>
+                            <img src={image.src} alt={`Pastries ${index + 1}`} loading="lazy" decoding="async" />
+                            <div className={styles.imageOverlay} onClick={() => setCurrentIndex(index)}>
+                                <p>{image.title}</p>
+                            </div>
+                        </div>
+
+                    ))}
+                </motion.div>
+
+
+                <div className={styles.dotsContainer}>
+                    {images.map((__, index) => (
+
+                        <span
+                            key={index}
+                            className={index === currentIndex ? styles.activeDot : ''}
+
+                        >
+                        </span>
+                    ))}
+                </div>
+
             </motion.div>
 
-            {/* Masonry Grid */}
-            <ResponsiveMasonry
-                columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1200: 3 }}
-            >
-                <Masonry gutter="1.5rem">
-                    {images.map((image, i) => (
-                        <motion.div
-                            key={i}
-                            className={styles.imageWrapper}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.05 }}
-                            viewport={{ once: true }}
-                        >
-                            <img src={image.src} alt={image.title} />
-                            <p>{image.title}</p>
-                        </motion.div>
-                    ))}
-                </Masonry>
-            </ResponsiveMasonry>
 
-        </div>
+
+
+        </div >
     );
 };
 
 export default Gallery;
+
