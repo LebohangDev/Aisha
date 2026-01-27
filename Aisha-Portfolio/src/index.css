@@ -96,6 +96,19 @@ p {
 }
 
 
+.activeSection {
+  display: block;
+  animation: fadeIn 0.8s ease-in-out;
+
+
+}
+
+.notActiveSection {
+  display: none;
+
+}
+
+
 
 
 

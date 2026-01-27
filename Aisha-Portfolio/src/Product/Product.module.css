@@ -47,7 +47,7 @@
     max-width: 1400px;
     margin: 0 auto 8rem auto;
     padding: 0 2rem;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .ProductContentContainer {
@@ -103,24 +103,6 @@
     margin-top: 1rem;
 }
 
-.emailInput {
-    flex: 1;
-    min-width: 250px;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    border: 1px solid #e0e0e0;
-    background-color: #f9f9f9;
-    color: var(--text-header);
-    font-family: 'Montserrat', sans-serif;
-    transition: all 0.2s;
-}
-
-.emailInput:focus {
-    border-color: var(--accent);
-    outline: none;
-    background-color: #fff;
-}
-
 .ProductContentBodyButton button {
     background-color: var(--accent);
     color: #ffffff;
@@ -157,6 +139,7 @@
 .ProductContentPrice {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 3rem;
     margin-top: 1rem;
     padding-top: 2rem;

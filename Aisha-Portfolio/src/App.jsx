@@ -4,6 +4,8 @@ import Home from './Home/Home';
 import Recognition from './Recognition/Recognition';
 import Product from './Product/Product';
 import Gallery from './Gallery/Gallery';
+import PaymentSuccess from './paymentPopups/PaymentSuccess';
+import PaymentCancel from './paymentPopups/PaymentCancel';
 import Nav from './Nav/Nav';
 import Footer from './Footer/Footer';
 
@@ -12,6 +14,10 @@ function App() {
 
   const [activeNav, setActiveNav] = useState('Home');
   const containerRef = useRef(null);
+  const [paymentActive, setPaymentActive] = useState(null);
+
+
+
 
 
 
@@ -35,7 +41,7 @@ function App() {
 
         </div>
         <div className={activeNav === 'Product' ? 'product active' : 'product'}>
-          <Product />
+          <Product setPaymentActive={setPaymentActive} />
 
         </div>
         <div className={activeNav === 'Gallery' ? 'gallery active' : 'gallery'}>
@@ -47,6 +53,18 @@ function App() {
       <div className="footer">
         <Footer />
       </div>
+
+      {paymentActive === 'PaymentSuccess' ? (
+        <div className="activeSection">
+          <PaymentSuccess setPaymentActive={setPaymentActive} />
+        </div>
+      ) : null}
+
+      {paymentActive === 'PaymentCancel' ? (
+        <div className="activeSection">
+          <PaymentCancel setPaymentActive={setPaymentActive} />
+        </div>
+      ) : null}
 
     </div>
   );

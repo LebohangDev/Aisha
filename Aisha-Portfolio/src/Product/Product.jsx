@@ -1,16 +1,25 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from "framer-motion";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import styles from './Product.module.css';
 
-const Product = () => {
+const Product = ({ setPaymentActive }) => {
 
+    const [email, setEmail] = useState('');
+    const [isEmailValid, setIsEmailValid] = useState(false);
     const benefitsRef = useRef(null);
+
+    const productInfo = {
+        title: "From Home-Level to Chef-Level Pastry",
+        amount: "10",
+    };
 
     const scrollToBenefits = () => {
         if (benefitsRef.current) {
             benefitsRef.current.scrollIntoView({ behavior: "smooth" });
         }
     };
+
 
     const benefitsItems = [
         { icon: "ri-restaurant-line", description: "Learn the core pastry techniques professionals rely on, explained in a clear, beginner-friendly way." },
@@ -20,17 +29,6 @@ const Product = () => {
         { icon: "ri-line-chart-line", description: "Know what to do when something goes wrong and how to fix it without panicking." },
     ];
 
-    const [email, setEmail] = useState('');
-    const [isEmailValid, setIsEmailValid] = useState(false);
-
-    const productInfo = {
-        title: "From Home-Level to Chef-Level Pastry",
-        amount: 29,
-        currency: "USD",
-        successUrl: "https://lebohangdev.github.io/Asim_Portfolio/?payment=success",
-        cancelUrl: "https://lebohangdev.github.io/Asim_Portfolio/?payment=cancel",
-    };
-
     const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.toLowerCase());
 
     const handleEmailChange = (e) => {
@@ -39,34 +37,18 @@ const Product = () => {
         setIsEmailValid(validateEmail(val));
     };
 
-    async function handleZinnaPayment() {
-        try {
-            const productPayload = {
-                amount: productInfo.amount,
-                currency: productInfo.currency,
-                title: productInfo.title,
-                email: email,
-                successUrl: productInfo.successUrl,
-                cancelUrl: productInfo.cancelUrl,
-            };
 
-            const res = await fetch('https://asim-portfolio-backend.onrender.com/api/create-payment-intent', {
-                method: 'POST',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(productPayload),
-            });
 
-            const data = await res.json();
-            window.location.href = data.redirect_url;
 
-        } catch (e) {
-            console.error("Payment session failed:", e);
-        }
-    }
+
+    const PAYPAL_CLIENT_ID = 'AbI5SbpG49bG4LAUsCTBGrEXU0O9Gj4CkkvulY6cFNOfcMncuVI-7B2pTHZrIRpozNZ4uxw6Am43-FGF'
+
+
+
+
 
     return (
         <div id="Product" className={styles.ProductContainer}>
-
             {/* HEADER */}
             <motion.div
                 className={styles.ProductHeader}
@@ -81,7 +63,6 @@ const Product = () => {
 
             {/* MAIN PRODUCT CONTENT */}
             <div className={styles.ProductContent}>
-
                 {/* LEFT TEXT */}
                 <motion.div
                     className={styles.ProductContentContainer}
@@ -96,19 +77,76 @@ const Product = () => {
 
                     <div className={styles.ProductContentBody}>
                         <h1>{productInfo.title}</h1>
-                        <p>Learn the exact fundamentals and finishing techniques that separate “homemade” from “chef-made”. Improve texture, consistency, plating, and overall quality.</p>
+                        <p>
+                            Learn the exact fundamentals and finishing techniques that separate “homemade” from “chef-made”.
+                            Improve texture, consistency, plating, and overall quality.
+                        </p>
 
                         <div className={styles.ProductContentBodyButton}>
-                            <input
-                                type="email"
-                                className={styles.emailInput}
-                                placeholder="Enter your email address"
-                                value={email}
-                                onChange={handleEmailChange}
-                            />
-                            <button disabled={!isEmailValid} onClick={() => { handleZinnaPayment(); setEmail(''); }}>
-                                GET STARTED NOW!
-                            </button>
+                            {/* PAYPAL */}
+                            <div style={{ marginTop: 16 }}>
+                                <PayPalScriptProvider
+                                    options={{
+                                        clientId: PAYPAL_CLIENT_ID,
+                                        currency: productInfo.currency,
+                                        intent: "capture",
+                                    }}
+                                >
+                                    <PayPalButtons
+                                        style={{ layout: "vertical" }}
+                                        createOrder={async () => {
+                                            const res = await fetch(`http://localhost:3000/api/create-order`, {
+                                                method: "POST",
+                                                headers: { "Content-Type": "application/json" },
+                                                body: JSON.stringify({
+                                                    amount: productInfo.amount,
+                                                    currency: productInfo.currency,
+                                                    email,
+                                                }),
+                                            });
+
+                                            const data = await res.json();
+
+
+
+
+
+                                            return data.id;
+                                        }}
+                                        onApprove={async (data) => {
+
+                                            const res = await fetch(`http://localhost:3000/api/capture-order`, {
+                                                method: "POST",
+                                                headers: { "Content-Type": "application/json" },
+                                                body: JSON.stringify({
+                                                    id: data.orderID,
+                                                    email,
+                                                }),
+                                            });
+
+                                            const details = await res.json();
+
+
+
+
+
+                                            setEmail("");
+                                            setIsEmailValid(false);
+
+                                            console.log("Capture details:", details);
+
+
+
+                                            setPaymentActive("PaymentSuccess");
+                                        }}
+                                        onCancel={() => {
+                                            setPaymentActive("PaymentCancel");
+                                        }}
+
+                                    />
+                                </PayPalScriptProvider>
+
+                            </div>
                         </div>
 
                         <div className={styles.ProductContentPrice}>
@@ -122,6 +160,8 @@ const Product = () => {
                                 <i className="ri-arrow-down-circle-line"></i>
                             </div>
                         </div>
+
+
                     </div>
                 </motion.div>
 
@@ -152,7 +192,9 @@ const Product = () => {
                     </div>
 
                     <a href="#Product">
-                        <button>Order ebook <i className="ri-shopping-bag-3-line"></i></button>
+                        <button>
+                            Order ebook <i className="ri-shopping-bag-3-line"></i>
+                        </button>
                     </a>
 
                     <img src="Images/benefits.svg" alt="" />
@@ -174,7 +216,6 @@ const Product = () => {
                     ))}
                 </div>
             </div>
-
         </div>
     );
 };
